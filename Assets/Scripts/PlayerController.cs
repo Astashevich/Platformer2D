@@ -7,57 +7,57 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speeadX = 1f;
     [SerializeField] private Animator animator;
 
-    private float horizontal = 0f;
-    private bool isFacingRight = true;
+    private float _horizontal = 0f;
+    private bool _isFacingRight = true;
 
-    private bool isGround = false;
-    private bool isJump = false;
-    private bool isFinished = false;
-    private bool isLeverArm = false;
+    private bool _isGround = false;
+    private bool _isJump = false;
+    private bool _isFinished = false;
+    private bool _isLeverArm = false;
 
-    private Rigidbody2D rb;
-    private Finish finish;
-    private LeverArm leverArm;
+    private Rigidbody2D _rb;
+    private Finish _finish;
+    private LeverArm _leverArm;
 
     const float speeadXMultiplier = 50f;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        finish = GameObject.FindGameObjectWithTag("Finish").GetComponent<Finish>();
-        leverArm = FindObjectOfType<LeverArm>();
+        _rb = GetComponent<Rigidbody2D>();
+        _finish = GameObject.FindGameObjectWithTag("Finish").GetComponent<Finish>();
+        _leverArm = FindObjectOfType<LeverArm>();
     }
 
     void Update()
     {
-        horizontal = Input.GetAxis("Horizontal");
-        animator.SetFloat("speedX", Mathf.Abs(horizontal));
-        if (Input.GetKeyDown(KeyCode.W) && isGround)
+        _horizontal = Input.GetAxis("Horizontal");
+        animator.SetFloat("speedX", Mathf.Abs(_horizontal));
+        if (Input.GetKeyDown(KeyCode.W) && _isGround)
         {
-            isJump = true;
+            _isJump = true;
         }
         if (Input.GetKeyDown(KeyCode.F))
         {
-            if (isFinished) finish.FinishLevel();
-            if (isLeverArm) leverArm.ActivateLeverArm();
+            if (_isFinished) _finish.FinishLevel();
+            if (_isLeverArm) _leverArm.ActivateLeverArm();
         }
     }
 
     void FixedUpdate()
     {
-        rb.velocity = new Vector2(horizontal * speeadX * speeadXMultiplier * Time.fixedDeltaTime, rb.velocity.y);
+        _rb.velocity = new Vector2(_horizontal * speeadX * speeadXMultiplier * Time.fixedDeltaTime, _rb.velocity.y);
 
-        if (isJump) {
-            rb.AddForce(new Vector2(0f, 500f));
-            isGround = false;
-            isJump = false;
+        if (_isJump) {
+            _rb.AddForce(new Vector2(0f, 500f));
+            _isGround = false;
+            _isJump = false;
         }
 
-        if (horizontal > 0f && !isFacingRight)
+        if (_horizontal > 0f && !_isFacingRight)
         {
             Flip();
         }
-        else if(horizontal < 0 && isFacingRight)
+        else if(_horizontal < 0 && _isFacingRight)
         {
             Flip();
         }
@@ -67,13 +67,13 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            isGround = true;
+            _isGround = true;
         }
     }
 
     private void Flip()
     {
-        isFacingRight = !isFacingRight;
+        _isFacingRight = !_isFacingRight;
         var playerScale = transform.localScale;
         playerScale.x *= -1;
         transform.localScale = playerScale;
@@ -85,12 +85,12 @@ public class PlayerController : MonoBehaviour
 
         if (collider.CompareTag("Finish"))
         {
-            isFinished = true;
+            _isFinished = true;
         }
         if (leverArmTemp != null)
         {
             Debug.Log("Click 'F' ro activate.");
-            isLeverArm = true;
+            _isLeverArm = true;
         }
     }
 
@@ -100,11 +100,11 @@ public class PlayerController : MonoBehaviour
 
         if (collider.CompareTag("Finish"))
         {
-            isFinished = false;
+            _isFinished = false;
         }
         if (leverArmTemp != null)
         {
-            isLeverArm = false;
+            _isLeverArm = false;
         }
     }
 }
