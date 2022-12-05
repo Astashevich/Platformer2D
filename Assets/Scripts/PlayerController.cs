@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float speeadX = 1f;
     [SerializeField] private Animator animator;
+    [SerializeField] private Transform playerModelTransform;
 
     private float _horizontal = 0f;
     private bool _isFacingRight = true;
@@ -74,9 +75,9 @@ public class PlayerController : MonoBehaviour
     private void Flip()
     {
         _isFacingRight = !_isFacingRight;
-        var playerScale = transform.localScale;
+        var playerScale = playerModelTransform.localScale;
         playerScale.x *= -1;
-        transform.localScale = playerScale;
+        playerModelTransform.localScale = playerScale;
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
