@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float speeadX = 1f;
     [SerializeField] private Animator animator;
     [SerializeField] private Transform playerModelTransform;
+    [SerializeField] private AudioSource jumpSound;
+    [SerializeField] private float speeadX = 1f;
 
     private float _horizontal = 0f;
     private bool _isFacingRight = true;
@@ -33,9 +34,10 @@ public class PlayerController : MonoBehaviour
     {
         _horizontal = Input.GetAxis("Horizontal");
         animator.SetFloat("speedX", Mathf.Abs(_horizontal));
-        if (Input.GetKeyDown(KeyCode.W) && _isGround)
+        if (Input.GetKeyDown(KeyCode.W) && _isGround && _rb.velocity.y <= 0f)
         {
             _isJump = true;
+            jumpSound.Play();
         }
         if (Input.GetKeyDown(KeyCode.F))
         {

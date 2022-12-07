@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+    [SerializeField] private AudioSource enemyHitSound;
     [SerializeField] private float damage = 20f;
 
     private AttackController _attackController;
@@ -18,6 +19,7 @@ public class Weapon : MonoBehaviour
         EnemyHealth enemyHelth = collision.GetComponent<EnemyHealth>();
         if(enemyHelth != null && _attackController.IsAttack)
         {
+            enemyHitSound.Play();
             enemyHelth.ReduceHealth(damage);
         }
     }
