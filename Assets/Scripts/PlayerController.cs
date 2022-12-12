@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D _rb;
     private Finish _finish;
     private LeverArm _leverArm;
+    private FixedJoystick _fixedJoystick;
 
     const float speeadXMultiplier = 50f;
 
@@ -34,22 +35,17 @@ public class PlayerController : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _finish = GameObject.FindGameObjectWithTag("Finish").GetComponent<Finish>();
         _leverArm = FindObjectOfType<LeverArm>();
+        _fixedJoystick = GameObject.FindGameObjectWithTag("Fixed Joystick").GetComponent<FixedJoystick>(); ;
     }
 
     void Update()
     {
         _horizontal = Input.GetAxis("Horizontal");
+        _horizontal = _fixedJoystick.Horizontal;
         animator.SetFloat("speedX", Mathf.Abs(_horizontal));
-        if (Input.GetKeyDown(KeyCode.W) && _isGround && _rb.velocity.y <= 0.2f)
-        {
-            _isJump = true;
-            jumpSound.Play();
-        }
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            if (_isFinished) _finish.FinishLevel();
-            if (_isLeverArm) _leverArm.ActivateLeverArm();
-        }
+
+        if (Input.GetKeyDown(KeyCode.W)) Jump();
+        if (Input.GetKeyDown(KeyCode.F)) Interact();
     }
 
     void FixedUpdate()
@@ -79,6 +75,21 @@ public class PlayerController : MonoBehaviour
         {
             _isGround = true;
         }
+    }
+
+    public void Jump()
+    {
+        if (_isGround && _rb.velocity.y <= 0.2f)
+        {
+            _isJump = true;
+            jumpSound.Play();
+        }
+    }
+
+    public void Interact()
+    {
+        if (_isFinished) _finish.FinishLevel();
+        if (_isLeverArm) _leverArm.ActivateLeverArm();
     }
 
     private void Flip()

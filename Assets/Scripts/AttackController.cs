@@ -13,12 +13,17 @@ public class AttackController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        /*if (Input.GetMouseButtonDown(0))
         {
-            _isAttack = true;
-            animator.SetTrigger("attack");
-            attackSound.Play();
-        }
+            Attack();
+        }*/
+    }
+
+    public void Attack()
+    {
+        _isAttack = true;
+        animator.SetTrigger("attack");
+        attackSound.Play();
     }
 
     public void FinishAttack()
