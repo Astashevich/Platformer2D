@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2139416304698002080}
   - component: {fileID: 7141955625371803943}
   - component: {fileID: 5218907204700925154}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6866549894979427311}
   - component: {fileID: 3266520969417652953}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,7 +175,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2963938633912529527}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -218,7 +218,7 @@ GameObject:
   - component: {fileID: 76487184311090344}
   - component: {fileID: 2258412378110780505}
   - component: {fileID: 6752486705307766723}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -355,7 +355,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7219170352949830624}
   - component: {fileID: 7409047144195505446}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Eyes_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -439,7 +439,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7219588658297259160}
   - component: {fileID: 7409081296759131712}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tear (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -523,7 +523,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7218900450752464678}
   - component: {fileID: 7409399002376551054}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -610,7 +610,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7219646523812712128}
   - component: {fileID: 7409083474531686904}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Blood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -694,7 +694,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7219634521983044762}
   - component: {fileID: 7409046853213167968}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Vibe2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -778,7 +778,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7219483867445619474}
   - component: {fileID: 7408449510256458322}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Eyes_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -862,7 +862,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7219799032701842802}
   - component: {fileID: 7310361427193988748}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -920,7 +920,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7219803762625464112}
   - component: {fileID: 7409849367331172416}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Eyes_brow_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1004,7 +1004,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7219647468241424892}
   - component: {fileID: 7410107159294108056}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Vibe2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1088,7 +1088,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7218957502907912112}
   - component: {fileID: 7408446389956987714}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: L_Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1172,7 +1172,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7219776274906657412}
   - component: {fileID: 7408458397327322670}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: R_Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1256,7 +1256,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7219269605947838054}
   - component: {fileID: 7409350404792121692}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Eyes_brow_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1340,7 +1340,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7219527345155230124}
   - component: {fileID: 7408581257417005174}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Vibe1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1424,7 +1424,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7219379689128486374}
   - component: {fileID: 7408457921721227308}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1510,7 +1510,7 @@ GameObject:
   - component: {fileID: 7219778210611484114}
   - component: {fileID: 7409943200089957340}
   - component: {fileID: 7310418551682388280}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1614,7 +1614,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7218816062333613328}
   - component: {fileID: 7409306352613627302}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Mouth_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1698,7 +1698,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7219760103300413060}
   - component: {fileID: 7409074675129346546}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1782,7 +1782,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7219520547389372336}
   - component: {fileID: 7409511707683671296}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Leg_Guard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1866,7 +1866,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7219712492619886094}
   - component: {fileID: 7409880184958702472}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1960,7 +1960,7 @@ GameObject:
   - component: {fileID: 5576216532337153257}
   - component: {fileID: 6276998790809835886}
   - component: {fileID: 1630237236533376689}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2060,7 +2060,7 @@ GameObject:
   - component: {fileID: 8089719032486649050}
   - component: {fileID: 7910119486541915039}
   - component: {fileID: 6841760019956855491}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}

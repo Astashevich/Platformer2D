@@ -16,6 +16,12 @@ public class PlayerController : MonoBehaviour
     private bool _isJump = false;
     private bool _isFinished = false;
     private bool _isLeverArm = false;
+    private bool _isDead = false;
+
+    public bool IsDead
+    {
+        set { _isDead = value; }
+    }
 
     private Rigidbody2D _rb;
     private Finish _finish;
@@ -48,6 +54,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (_isDead) return;
         _rb.velocity = new Vector2(_horizontal * speeadX * speeadXMultiplier * Time.fixedDeltaTime, _rb.velocity.y);
 
         if (_isJump) {

@@ -32,7 +32,9 @@ public class PlayerHealth : MonoBehaviour
 
     private void Die()
     {
-        gameObject.SetActive(false);
+        PlayerController playerController = GetComponent<PlayerController>();
+        playerController.IsDead = true;
+        _animator.SetTrigger("die");
         gameOverCanvas.SetActive(true);
     }
 }

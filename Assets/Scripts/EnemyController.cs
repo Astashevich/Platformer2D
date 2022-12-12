@@ -9,7 +9,6 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float chasingSpeed = 3f;
     [SerializeField] private float timeToWait = 5f;
     [SerializeField] private float timeToChase = 3f;
-    [SerializeField] private float minDistanceToPlayer = 1.4f;
     [SerializeField] private Transform enemyModelTransform;
 
     private Rigidbody2D _rb;
@@ -20,6 +19,7 @@ public class EnemyController : MonoBehaviour
     private bool _isFacingRight = true;
     private bool _isWait = false;
     private bool _isChasingPlayer = false;
+    private bool _collidedWithPlayer = false;
 
     private float _walkSpeed;
     private float _waitTime;
@@ -60,7 +60,7 @@ public class EnemyController : MonoBehaviour
     {
         Vector2 nextPoint = Vector2.right * _walkSpeed * Time.fixedDeltaTime;
 
-        if(_isChasingPlayer && Mathf.Abs(DistanceToPlayer()) < minDistanceToPlayer) return;
+        if(_isChasingPlayer && _collidedWithPlayer) return;
 
         if (!_isWait && !_isChasingPlayer) Patrol(nextPoint);
         if (_isChasingPlayer) ChasePlayer(nextPoint);
@@ -71,6 +71,10 @@ public class EnemyController : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawLine(_leftBoundaryPosition, _rightBoundaryPosition);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision) => HitPlayer(collision, true);
+
+    private void OnCollisionExit2D(Collision2D collision) => HitPlayer(collision, false);
 
     private void Patrol(Vector2 nextPoint)
     {
@@ -128,6 +132,10 @@ public class EnemyController : MonoBehaviour
         enemyModelTransform.localScale = playerScale;
     }
 
-    private float DistanceToPlayer() => _playerTransform.position.x - transform.position.x;
+    private void HitPlayer(Collision2D collision, bool hit)
+    {
+        PlayerController player = collision.gameObject.GetComponent<PlayerController>();
+        if (player != null) _collidedWithPlayer = hit;
+    }
 
 }

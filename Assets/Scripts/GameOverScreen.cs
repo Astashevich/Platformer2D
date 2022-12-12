@@ -9,10 +9,12 @@ public class GameOverScreen : MonoBehaviour
     {
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
+        Time.timeScale = 1f;
     }
 
     public void ExitHandler()
     {
         SceneManager.LoadScene(0);
+        Time.timeScale = 1f;
     }
 }
